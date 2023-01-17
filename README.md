@@ -14,7 +14,7 @@
 
 > _Note_: Remember to `git add`, `git commit` and `git push` regularly
 
-Using the [Tuner API that you built](https://github.com/joinpursuit/tuner-api/blob/main/README.md), you are going to create a frontend-only app.
+Using the [Tuner API that you built](https://github.com/9-1-pursuit/lab-express-sql-seed-read), you are going to create a frontend-only app.
 
 Don't forget to keep your back-end API running during this build/
 
