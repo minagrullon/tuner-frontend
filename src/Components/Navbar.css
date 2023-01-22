@@ -1,0 +1,44 @@
+nav {
+  background-color: rgb(169, 144, 183);
+  background-image: url("https://cdn1.vectorstock.com/i/1000x1000/62/00/pastel-abstract-background-for-design-vector-1986200.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.nav_h1 {
+  color: rgb(78, 48, 152);
+  text-shadow: 2px 0px 2px rosybrown;
+}
+
+.nav_h1:hover {
+  color: rgb(213, 115, 80);
+  letter-spacing: 2.5px;
+  text-shadow: 2px 0px 2px rgb(88, 67, 67);
+}
+
+.nav_button {
+  margin: 4px;
+  padding: 6px;
+  width: 50px;
+  background-color: rgb(224, 210, 232);
+  border: 2px solid rgb(170, 132, 132);
+  border-radius: 18px;
+}
+.nav_button a {
+  color: rgb(155, 93, 93);
+}
+
+.nav_button:hover {
+  padding: 10px;
+  box-shadow: 8px 3px 5px rgb(227, 139, 139);
+}

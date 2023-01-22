@@ -1,0 +1,46 @@
+.index h4 {
+  margin-left: 90px;
+}
+
+.songs section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table a {
+  text-decoration: none;
+  color: maroon;
+  font-weight: bold;
+}
+
+table {
+  border-spacing: 0.5rem;
+  width: 80%;
+}
+td {
+  padding: 0.5rem;
+}
+
+td:nth-child(even) {
+  background: hsl(288, 19%, 84%);
+}
+td:nth-child(odd) {
+  background: hsl(259, 21%, 77%);
+}
+
+/* tr:hover {
+  border: 2px solid rgb(218, 132, 132);
+} */
+
+thead {
+  color: rgb(91, 47, 91);
+}
+
+tbody td:nth-child(1):hover {
+  border: 1px solid purple;
+}
+
+tbody td:nth-child(2):hover {
+  border: 1px solid rgb(214, 148, 82);
+}
