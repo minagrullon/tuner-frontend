@@ -1,5 +1,6 @@
 .song_title {
-  color: rgb(126, 30, 126);
+  color: rgb(66, 38, 167);
+  letter-spacing: 1.4px;
 }
 
 .show_title {
@@ -8,10 +9,12 @@
 
 article {
   display: block;
+
   margin-right: 120px;
   margin-left: 120px;
   background-color: rgb(241, 219, 223);
-  padding: 20px;
+  padding: 40px;
+  width: 80%;
   border-radius: 20px;
 }
 
@@ -21,13 +24,13 @@ article {
 }
 
 .show_buttons button {
-  padding: 4px;
+  padding: 9px;
   border-radius: 8px;
   border: 2px solid rgb(209, 154, 154);
   background-color: rgb(231, 224, 230);
 }
 
 .show_buttons button:hover {
-  padding: 6px;
+  padding: 10px;
   border: 3px dotted rgb(209, 154, 154);
 }

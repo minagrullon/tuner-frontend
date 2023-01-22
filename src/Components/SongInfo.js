@@ -40,7 +40,9 @@ export default function SongInfo() {
       <h3 className="song_title">
         {song.is_favorite ? "🥰" : "😷"} {song.name}
       </h3>
-      <h4>Artist: {song.artist}</h4>
+      <h4>
+        Artist: <span style={{ color: "rgb(84, 68, 140)" }}>{song.artist}</span>
+      </h4>
       <h5>{song.album}</h5>
       <p>{song.time}</p>
       <div className="show_buttons">

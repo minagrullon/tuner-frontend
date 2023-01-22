@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import "./EditSong.css";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -58,10 +59,10 @@ export default function NewSongForm() {
   };
 
   return (
-    <div className="new">
+    <div className="form_container">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">
-          Title
+          Title:{" "}
           <input
             id="name"
             value={song.name}
@@ -71,7 +72,7 @@ export default function NewSongForm() {
           />
         </label>
         <label htmlFor="artist">
-          Artist
+          Artist:{" "}
           <input
             id="artist"
             value={song.artist}
@@ -81,7 +82,7 @@ export default function NewSongForm() {
           />
         </label>
         <label htmlFor="album">
-          Album
+          Album:{" "}
           <input
             id="Album"
             value={song.album}
@@ -91,7 +92,7 @@ export default function NewSongForm() {
           />
         </label>
         <label htmlFor="time">
-          Duration of Song
+          Duration of Song:{" "}
           <input
             id="time"
             value={song.time}
@@ -100,15 +101,29 @@ export default function NewSongForm() {
             placeholder="00:00"
           />
         </label>
-        <label htmlFor="is_favorite">Favorite:</label>
-        <input
-          id="is_favorite"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={song.is_favorite}
-        />
+        <label htmlFor="is_favorite">
+          Favorite:{" "}
+          <input
+            id="is_favorite"
+            type="checkbox"
+            onChange={handleCheckboxChange}
+            checked={song.is_favorite}
+          />
+        </label>
         <input type="submit" />
       </form>
+      <div class="drops">
+        <div class="drop drop-1"></div>
+        <div class="drop drop-2"></div>
+        <div class="drop drop-3"></div>
+        <div class="drop drop-4"></div>
+        <div class="drop drop-5"></div>
+      </div>
+      <div>
+        <button className="go_back" onClick={() => navigate("/songs")}>
+          Go Back
+        </button>
+      </div>
     </div>
   );
 }
