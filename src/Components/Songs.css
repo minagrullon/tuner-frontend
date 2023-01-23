@@ -1,11 +1,20 @@
 .index h4 {
   margin-left: 90px;
+  color: rgb(89, 165, 224);
 }
 
+.index {
+  display: grid;
+  background-image: url("https://amanis.cool/static/media/logo.71226e63.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 80vh;
+}
 .songs section {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 table a {
@@ -35,7 +44,7 @@ td:nth-child(odd) {
 } */
 
 thead {
-  color: rgb(91, 47, 91);
+  color: rgb(235, 77, 235);
 }
 
 tbody td:nth-child(1):hover {

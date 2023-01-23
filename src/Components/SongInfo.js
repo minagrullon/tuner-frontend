@@ -36,30 +36,33 @@ export default function SongInfo() {
   };
 
   return (
-    <article>
-      <h3 className="song_title">
-        {song.is_favorite ? "🥰" : "😷"} {song.name}
-      </h3>
-      <h4>
-        Artist: <span style={{ color: "rgb(84, 68, 140)" }}>{song.artist}</span>
-      </h4>
-      <h5>{song.album}</h5>
-      <p>{song.time}</p>
-      <div className="show_buttons">
-        <div>
-          <Link to={`/songs`}>
-            <button>Back</button>
-          </Link>
+    <div className="song_details">
+      <article>
+        <h3 className="song_title">
+          {song.is_favorite ? "🥰" : "😷"} {song.name}
+        </h3>
+        <h4>
+          Artist:{" "}
+          <span style={{ color: "rgb(84, 68, 140)" }}>{song.artist}</span>
+        </h4>
+        <h5>{song.album}</h5>
+        <p>{song.time}</p>
+        <div className="show_buttons">
+          <div>
+            <Link to={`/songs`}>
+              <button>Back</button>
+            </Link>
+          </div>
+          <div>
+            <Link to={`/songs/${id}/edit`}>
+              <button>Edit</button>
+            </Link>
+          </div>
+          <div>
+            <button onClick={handleDelete}>Delete</button>
+          </div>
         </div>
-        <div>
-          <Link to={`/songs/${id}/edit`}>
-            <button>Edit</button>
-          </Link>
-        </div>
-        <div>
-          <button onClick={handleDelete}>Delete</button>
-        </div>
-      </div>
-    </article>
+      </article>
+    </div>
   );
 }

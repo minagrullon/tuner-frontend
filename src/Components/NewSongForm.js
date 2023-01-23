@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./NewSong.css";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -37,10 +38,10 @@ export default function NewSongForm() {
   };
 
   return (
-    <div className="new">
+    <div className="new_form">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">
-          Title
+          Title:{" "}
           <input
             id="name"
             value={song.name}
@@ -50,7 +51,7 @@ export default function NewSongForm() {
           />
         </label>
         <label htmlFor="artist">
-          Artist
+          Artist:{" "}
           <input
             id="artist"
             value={song.artist}
@@ -60,7 +61,7 @@ export default function NewSongForm() {
           />
         </label>
         <label htmlFor="album">
-          Album
+          Album:{" "}
           <input
             id="album"
             value={song.album}
@@ -70,7 +71,7 @@ export default function NewSongForm() {
           />
         </label>
         <label htmlFor="time">
-          Duration of Song
+          Duration of Song:{" "}
           <input
             id="time"
             value={song.time}
@@ -79,15 +80,29 @@ export default function NewSongForm() {
             placeholder="00:00"
           />
         </label>
-        <label htmlFor="is_favorite">Favorite:</label>
-        <input
-          id="is_favorite"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={song.is_favorite}
-        />
+        <label htmlFor="is_favorite">
+          Favorite:{" "}
+          <input
+            id="is_favorite"
+            type="checkbox"
+            onChange={handleCheckboxChange}
+            checked={song.is_favorite}
+          />
+        </label>
         <input type="submit" />
       </form>
+      <div class="droplets">
+        <div class="droplet droplet-1"></div>
+        <div class="droplet droplet-2"></div>
+        <div class="droplet droplet-3"></div>
+        <div class="droplet droplet-4"></div>
+        <div class="droplet droplet-5"></div>
+      </div>
+      <div>
+        <button className="go_back" onClick={() => navigate("/songs")}>
+          Back to Songs
+        </button>
+      </div>
     </div>
   );
 }

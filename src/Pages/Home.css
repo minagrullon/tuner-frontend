@@ -1,0 +1,22 @@
+.home {
+  display: grid;
+
+  /* justify-content: center; */
+  text-align: center;
+  background-image: url("https://preziotte.com/assets/gifs/processed/conductive_ripple.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.home h2 {
+  margin-top: 40px;
+  color: rgb(221, 191, 80);
+}
+
+.home h4 {
+  margin-top: 0px;
+  text-transform: uppercase;
+  color: rgb(221, 191, 80);
+}

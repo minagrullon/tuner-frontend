@@ -3,7 +3,7 @@ import NewSongForm from "../Components/NewSongForm";
 
 export default function New() {
   return (
-    <div>
+    <div className="new">
       <h3>New</h3>
       <NewSongForm />
     </div>

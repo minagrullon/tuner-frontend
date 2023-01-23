@@ -21,7 +21,7 @@ nav a {
 }
 
 .nav_h1:hover {
-  color: rgb(213, 115, 80);
+  color: rgb(234, 187, 66);
   letter-spacing: 2.5px;
   text-shadow: 2px 0px 2px rgb(88, 67, 67);
 }
@@ -41,4 +41,9 @@ nav a {
 .nav_button:hover {
   padding: 10px;
   box-shadow: 8px 3px 5px rgb(227, 139, 139);
+}
+
+nav h4:hover {
+  color: rgb(226, 175, 73);
+  font-size: large;
 }

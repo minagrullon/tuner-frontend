@@ -1,3 +1,23 @@
+.edit h3 {
+  margin-left: 90px;
+}
+.show {
+  display: flex;
+  background-image: url("https://miro.medium.com/max/1400/1*_aXi645v-3EKFAQSj2LYHg.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  margin-top: 0px;
+}
+.song_details {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  height: 40%;
+  width: 80%;
+}
+
 .song_title {
   color: rgb(66, 38, 167);
   letter-spacing: 1.4px;
@@ -5,13 +25,13 @@
 
 .show_title {
   margin-left: 90px;
+  color: white;
 }
 
 article {
   display: block;
-
-  margin-right: 120px;
-  margin-left: 120px;
+  margin-right: 160px;
+  margin-left: 170px;
   background-color: rgb(241, 219, 223);
   padding: 40px;
   width: 80%;
