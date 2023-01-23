@@ -3,7 +3,8 @@
 
   /* justify-content: center; */
   text-align: center;
-  background-image: url("https://preziotte.com/assets/gifs/processed/conductive_ripple.gif");
+  /* background-image: url("https://preziotte.com/assets/gifs/processed/conductive_ripple.gif"); */
+  background-image: url("https://i.pinimg.com/originals/83/4b/dc/834bdc62616b124bf0d764b670763438.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -11,12 +12,16 @@
 }
 
 .home h2 {
-  margin-top: 40px;
+  margin-top: 100px;
+  margin-bottom: 0px;
   color: rgb(221, 191, 80);
+  font-size: 1.6em;
 }
 
 .home h4 {
-  margin-top: 0px;
+  margin-top: -75px;
   text-transform: uppercase;
-  color: rgb(221, 191, 80);
+  color: rgb(221, 80, 212);
+  letter-spacing: 1px;
+  font-size: 1.3em;
 }

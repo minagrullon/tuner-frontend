@@ -1,0 +1,23 @@
+.error {
+  display: grid;
+  background-image: url("https://freefrontend.com/assets/img/html-funny-404-pages/HTML-404-Error-Page.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.error button {
+  width: 7%;
+  height: 7%;
+  font-weight: bold;
+  margin-top: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 18px;
+  background-color: rgb(180, 93, 193);
+}
+
+.error button:hover {
+  background-color: rgb(43, 195, 226);
+}

@@ -120,7 +120,7 @@ export default function NewSongForm() {
         <div class="drop drop-5"></div>
       </div>
       <div>
-        <button className="go_back" onClick={() => navigate("/songs")}>
+        <button className="go_back" onClick={() => navigate(`/songs/${id}`)}>
           Go Back
         </button>
       </div>
