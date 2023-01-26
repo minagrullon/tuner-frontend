@@ -2,12 +2,12 @@
   margin-left: 90px;
 }
 .show {
-  display: flex;
+  /* display: flex; */
   background-image: url("https://miro.medium.com/max/1400/1*_aXi645v-3EKFAQSj2LYHg.gif");
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-position: center;
-  background-size: cover;
-  height: 100vh;
+  /* background-size: cover; */
+  /* height: 100vh; */
   margin-top: 0px;
 }
 .song_details {
@@ -16,6 +16,18 @@
   margin-top: 40px;
   height: 40%;
   width: 80%;
+  opacity: 75%;
+}
+
+.song_dets_contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://media.tenor.com/2hTr3jNerYkAAAAC/music-colour.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 .song_title {
@@ -29,7 +41,7 @@
 }
 
 article {
-  display: block;
+  /* display: block; */
   margin-right: 160px;
   margin-left: 170px;
   background-color: rgb(241, 219, 223);
@@ -53,4 +65,23 @@ article {
 .show_buttons button:hover {
   padding: 10px;
   border: 3px dotted rgb(209, 154, 154);
+}
+
+.songs_in_playlists {
+  display: grid;
+
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(225, 216, 232);
+  opcaity: 70%;
+}
+
+.song_form {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid black;
 }

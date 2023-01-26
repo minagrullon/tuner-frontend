@@ -1,11 +1,11 @@
 import React from "react";
-import Songs from "../Components/Songs";
+import Playlists from "../Components/Playlists";
 
 export default function Index() {
   return (
     <div className="index">
-      <h4>All Songs</h4>
-      <Songs />
+      <h4>All Playlists</h4>
+      <Playlists />
     </div>
   );
 }

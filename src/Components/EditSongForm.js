@@ -112,12 +112,12 @@ export default function NewSongForm() {
         </label>
         <input type="submit" />
       </form>
-      <div class="drops">
-        <div class="drop drop-1"></div>
-        <div class="drop drop-2"></div>
-        <div class="drop drop-3"></div>
-        <div class="drop drop-4"></div>
-        <div class="drop drop-5"></div>
+      <div className="drops">
+        <div className="drop drop-1"></div>
+        <div className="drop drop-2"></div>
+        <div className="drop drop-3"></div>
+        <div className="drop drop-4"></div>
+        <div className="drop drop-5"></div>
       </div>
       <div>
         <button className="go_back" onClick={() => navigate(`/songs/${id}`)}>

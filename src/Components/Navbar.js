@@ -8,12 +8,12 @@ export default function Navbar() {
     <nav>
       <h4 onClick={() => navigate("/")}>TUNER APP</h4>
       <h1>
-        <Link className="nav_h1" to="/songs">
-          Songs
+        <Link className="nav_h1" to="/playlists">
+          Playlists
         </Link>
       </h1>
       <button className="nav_button">
-        <Link to="/songs/new">New</Link>
+        <Link to="/playlists/new">New</Link>
       </button>
     </nav>
   );

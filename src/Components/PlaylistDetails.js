@@ -2,54 +2,53 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import Songs from "./Songs";
+
 import "./SongInfo.css";
 const API = process.env.REACT_APP_API_URL;
 
-export default function SongInfo({ id, playlistId }) {
-  // const { id } = useParams();
+export default function SongInfo() {
+  const { id } = useParams();
   const navigate = useNavigate();
-  const [song, setSong] = useState({});
+  const [playlist, setPlaylist] = useState({});
 
   const handleDelete = () => {
-    deleteSong();
+    deletePlaylist();
   };
 
   useEffect(() => {
     axios
-      .get(`${API}/playlists/${playlistId}/songs/${id}`)
+      .get(`${API}/playlists/${id}`)
       .then(
         (res) =>
           // console.log(res.data);
-          setSong(res.data),
+          setPlaylist(res.data),
         (error) => navigate(`/*`)
       )
       .catch((err) => console.log(err));
   }, [id]);
 
-  const deleteSong = () => {
+  const deletePlaylist = () => {
     axios
-      .delete(`${API}/playlists/${playlistId}/songs/${id}`)
+      .delete(`${API}/playlists/${id}`)
       .then(() => {
-        navigate(`/playlists/${playlistId}`);
+        navigate(`/playlists`);
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div className="song_dets_contain">
-      <div className="song_details">
+    <>
+      <div className="">
         <article>
-          <h3 className="song_title">{song.name}</h3>
-          Is fav? {song.is_favorite ? "🥰" : "😷"}
           <h4>
-            Artist:{" "}
-            <span style={{ color: "rgb(84, 68, 140)" }}>{song.artist}</span>
+            Name:{" "}
+            <span style={{ color: "rgb(84, 68, 140)" }}>{playlist.name}</span>
           </h4>
-          <h5>Album Title: {song.album}</h5>
-          <p>Song Duration: {song.time}</p>
+          Description: <h5>{playlist.description}</h5>
           <div className="show_buttons">
             <div>
-              <Link to={`/playlists/${id}`}>
+              <Link to={`/playlists`}>
                 <button>Back</button>
               </Link>
             </div>
@@ -63,7 +62,12 @@ export default function SongInfo({ id, playlistId }) {
             </div>
           </div>
         </article>
+        <br></br>
       </div>
-    </div>
+      <div className="songs_in_playlists">
+        <h4 style={{ color: "white" }}>Songs in this playlist</h4>
+        <Songs playlistId={playlist.id} />
+      </div>
+    </>
   );
 }

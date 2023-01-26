@@ -6,14 +6,14 @@ import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function NewSongForm() {
+export default function NewSongForm({ playlistId }) {
   const navigate = useNavigate();
 
   const addSong = (newSong) => {
     axios
-      .post(`${API}/songs`, newSong)
+      .post(`${API}/playlists/${playlistId}/songs`, newSong)
       .then(() => {
-        navigate(`/songs`);
+        navigate(`/playlists/${playlistId}`);
       })
       .catch((err) => console.log(err));
   };
@@ -38,7 +38,8 @@ export default function NewSongForm() {
   };
 
   return (
-    <div className="new_form">
+    <div className="song_form">
+      <h3 style={{ color: "white" }}>Add a Song to the playlist</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">
           Title:{" "}
@@ -91,17 +92,11 @@ export default function NewSongForm() {
         </label>
         <input type="submit" />
       </form>
-      <div class="droplets">
-        <div class="droplet droplet-1"></div>
-        <div class="droplet droplet-2"></div>
-        <div class="droplet droplet-3"></div>
-        <div class="droplet droplet-4"></div>
-        <div class="droplet droplet-5"></div>
-      </div>
+
       <div>
-        <button className="go_back" onClick={() => navigate("/songs")}>
+        {/* <button className="go_back" onClick={() => navigate("/songs")}>
           Back to Songs
-        </button>
+        </button> */}
       </div>
     </div>
   );

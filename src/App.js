@@ -11,6 +11,7 @@ import Error from "./Pages/Error";
 
 //components
 import Navbar from "./Components/Navbar";
+import SongInfo from "./Components/SongInfo";
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/songs" element={<Index />} />
-            <Route path="/songs/new" element={<New />} />
-            <Route path="/songs/:id" element={<Show />} />
-            <Route path="/songs/:id/edit" element={<Edit />} />
+            <Route path="/playlists" element={<Index />} />
+            <Route path="/playlists/new" element={<New />} />
+            <Route path="/playlists/:id" element={<Show />} />
+            <Route path="/playlists/:id/edit" element={<Edit />} />
+            <Route path="/playlists/:id/songs/:id" element={<SongInfo />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

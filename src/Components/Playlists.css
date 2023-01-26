@@ -1,0 +1,14 @@
+.playlists {
+  display: grid;
+  justify-content: center;
+  background-color: rgb(237, 226, 228);
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  opacity: 80%;
+}
+
+.playlists a {
+  text-decoration: none;
+}
