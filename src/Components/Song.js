@@ -17,18 +17,21 @@ export default function Song({ song, playlistId, handleDelete, handleSubmit }) {
         <EditSongForm
           playlistId={playlistId}
           handleSubmit={handleSubmit}
-          song={song}
+          identifier={song.id}
+          toggleEditForm={toggleEditForm}
+          viewEditForm={viewEditForm}
+          handleSubmit={handleSubmit}
         />
       ) : (
         <tr>
           <td onClick={() => setShow(!show)}>
-            {/* <Link to={`/playlists/${playlistId}/songs/${song.id}`}> */}
             {song.name}
             {show ? <SongInfo id={song.id} playlistId={playlistId} /> : null}
-            {/* </Link> */}
           </td>
           <td>
-            <button onClick={toggleView}>edit this song</button>
+            <button className="go_back" onClick={toggleView}>
+              edit
+            </button>
           </td>
         </tr>
       )}

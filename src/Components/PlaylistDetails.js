@@ -45,7 +45,10 @@ export default function SongInfo() {
             Name:{" "}
             <span style={{ color: "rgb(84, 68, 140)" }}>{playlist.name}</span>
           </h4>
-          Description: <h5>{playlist.description}</h5>
+          <h5>
+            <em>Description: </em>
+            {playlist.description}
+          </h5>
           <div className="show_buttons">
             <div>
               <Link to={`/playlists`}>
@@ -53,7 +56,7 @@ export default function SongInfo() {
               </Link>
             </div>
             <div>
-              <Link to={`/songs/${id}/edit`}>
+              <Link to={`/playlists/${id}/edit`}>
                 <button>Edit</button>
               </Link>
             </div>
@@ -65,7 +68,9 @@ export default function SongInfo() {
         <br></br>
       </div>
       <div className="songs_in_playlists">
-        <h4 style={{ color: "white" }}>Songs in this playlist</h4>
+        <h4 style={{ color: "maroon", textAlign: "center" }}>
+          Songs in this playlist
+        </h4>
         <Songs playlistId={playlist.id} />
       </div>
     </>

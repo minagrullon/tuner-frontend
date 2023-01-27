@@ -14,9 +14,6 @@
 .songs section {
   display: flex;
   justify-content: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* align-items: center; */
 }
 
 table a {
@@ -39,14 +36,16 @@ td:nth-child(even) {
 }
 td:nth-child(odd) {
   background: hsl(259, 21%, 77%);
+  width: 600px;
 }
 
-/* tr:hover {
+tr:hover {
   border: 2px solid rgb(218, 132, 132);
-} */
+}
 
 thead {
-  color: rgb(235, 77, 235);
+  color: rgb(161, 137, 137);
+  text-align: left;
 }
 
 tbody td:nth-child(1):hover {
@@ -59,6 +58,25 @@ tbody td:nth-child(2):hover {
   letter-spacing: 2px;
 }
 
-tr {
-  width: 90%;
+.songs_in_playlists {
+  display: grid;
+  border-radius: 20px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(223, 214, 214);
+  padding: 10px;
+}
+
+.song_form {
+  width: 60%;
+  display: grid;
+  padding: 12px;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid rgb(161, 137, 137);
+  background-color: rgb(219, 210, 210);
+  border-radius: 25px;
+  box-shadow: 20px 20px 40px -8px rgba(0, 0, 0, 0.2);
 }

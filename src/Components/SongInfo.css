@@ -22,12 +22,12 @@
 .song_dets_contain {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   background-image: url("https://media.tenor.com/2hTr3jNerYkAAAAC/music-colour.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 60vh;
 }
 
 .song_title {
@@ -41,12 +41,14 @@
 }
 
 article {
-  /* display: block; */
-  margin-right: 160px;
-  margin-left: 170px;
+  display: grid;
+  margin-right: auto;
+  margin-left: auto;
   background-color: rgb(241, 219, 223);
   padding: 40px;
-  width: 80%;
+  width: 56%;
+  height: 40vh;
+  opacity: 88%;
   border-radius: 20px;
 }
 
@@ -65,23 +67,4 @@ article {
 .show_buttons button:hover {
   padding: 10px;
   border: 3px dotted rgb(209, 154, 154);
-}
-
-.songs_in_playlists {
-  display: grid;
-
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgb(225, 216, 232);
-  opcaity: 70%;
-}
-
-.song_form {
-  width: 70%;
-  display: flex;
-  justify-content: center;
-  margin-right: auto;
-  margin-left: auto;
-  border: 2px solid black;
 }

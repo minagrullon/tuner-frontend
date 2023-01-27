@@ -39,7 +39,14 @@ export default function NewSongForm({ playlistId }) {
 
   return (
     <div className="song_form">
-      <h3 style={{ color: "white" }}>Add a Song to the playlist</h3>
+      <h3
+        style={{
+          color: "white",
+          textShadow: "3px 3px 6px rgba(0, 0, 0, 0.2)",
+        }}
+      >
+        Add a Song to the playlist
+      </h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">
           Title:{" "}

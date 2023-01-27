@@ -12,6 +12,7 @@ export default function SongInfo({ id, playlistId }) {
 
   const handleDelete = () => {
     deleteSong();
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -49,15 +50,15 @@ export default function SongInfo({ id, playlistId }) {
           <p>Song Duration: {song.time}</p>
           <div className="show_buttons">
             <div>
-              <Link to={`/playlists/${id}`}>
+              {/* <Link to={`/playlists/${id}`}>
                 <button>Back</button>
-              </Link>
+              </Link> */}
             </div>
-            <div>
+            {/* <div>
               <Link to={`/songs/${id}/edit`}>
                 <button>Edit</button>
               </Link>
-            </div>
+            </div> */}
             <div>
               <button onClick={handleDelete}>Delete</button>
             </div>

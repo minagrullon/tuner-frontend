@@ -5,8 +5,14 @@ import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function NewSongForm() {
-  let { id } = useParams();
+export default function EditSongForm({
+  playlistId,
+  identifier,
+  viewEditForm,
+  toggleEditForm,
+  handleSubmit,
+}) {
+  // let { id } = useParams();
   const navigate = useNavigate();
 
   const [song, setSong] = useState({
@@ -19,23 +25,11 @@ export default function NewSongForm() {
 
   const updateSong = (updatedSong) => {
     axios
-      .put(`${API}/songs/${id}`, updatedSong)
+      .put(`${API}/playlist/${playlistId}/songs/${identifier}`, updatedSong)
       .then(() => {
-        navigate(`/songs/${id}`);
+        navigate(`/playlists/${playlistId}`);
       })
       .catch((err) => console.log(err));
-  };
-
-  const updateBookmark = (updatedBookmark) => {
-    axios
-      .put(`${API}/bookmarks/${id}`, updatedBookmark)
-      .then(
-        () => {
-          navigate(`/bookmarks/${id}`);
-        },
-        (error) => console.error(error)
-      )
-      .catch((c) => console.warn("catch", c));
   };
 
   const handleTextChange = (event) => {
@@ -48,19 +42,21 @@ export default function NewSongForm() {
 
   useEffect(() => {
     axios
-      .get(`${API}/songs/${id}`)
+      .get(`${API}/playlists/${playlistId}/songs/${identifier}`)
       .then((res) => setSong(res.data))
       .catch((error) => console.error(error));
-  }, [id]);
+  }, [identifier]);
 
-  const handleSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    updateSong(song, id);
+    handleSubmit(song, identifier);
+    navigate(`/playlists/${playlistId}`);
+    // updateSong(song, identifier);
   };
 
   return (
     <div className="form_container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleFormSubmit}>
         <label htmlFor="name">
           Title:{" "}
           <input
@@ -84,7 +80,7 @@ export default function NewSongForm() {
         <label htmlFor="album">
           Album:{" "}
           <input
-            id="Album"
+            id="album"
             value={song.album}
             type="text"
             onChange={handleTextChange}
@@ -120,7 +116,10 @@ export default function NewSongForm() {
         <div className="drop drop-5"></div>
       </div>
       <div>
-        <button className="go_back" onClick={() => navigate(`/songs/${id}`)}>
+        <button
+          className="go_back"
+          onClick={() => toggleEditForm(!viewEditForm)}
+        >
           Go Back
         </button>
       </div>
