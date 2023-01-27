@@ -50,7 +50,7 @@ export default function EditSongForm({
   const handleFormSubmit = (event) => {
     event.preventDefault();
     handleSubmit(song, identifier);
-    navigate(`/playlists/${playlistId}`);
+    toggleEditForm(!viewEditForm);
     // updateSong(song, identifier);
   };
 

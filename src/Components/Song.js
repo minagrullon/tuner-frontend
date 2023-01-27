@@ -16,7 +16,6 @@ export default function Song({ song, playlistId, handleDelete, handleSubmit }) {
       {viewEditForm ? (
         <EditSongForm
           playlistId={playlistId}
-          handleSubmit={handleSubmit}
           identifier={song.id}
           toggleEditForm={toggleEditForm}
           viewEditForm={viewEditForm}
@@ -30,7 +29,10 @@ export default function Song({ song, playlistId, handleDelete, handleSubmit }) {
           </td>
           <td>
             <button className="go_back" onClick={toggleView}>
-              edit
+              Edit
+            </button>
+            <button className="go_back" onClick={() => handleDelete(song.id)}>
+              Delete
             </button>
           </td>
         </tr>
