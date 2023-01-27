@@ -1,22 +1,23 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./NewSong.css";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function NewSongForm({ playlistId }) {
+export default function NewSongForm({ playlistId, handleAdd }) {
   const navigate = useNavigate();
+  // let { id } = useParams();
+  // const addSong = (newSong) => {
+  //   axios
+  //     .post(`${API}/playlists/${playlistId}/songs`, newSong)
+  //     .then(() => {
+  //       navigate(`/playlists/${playlistId}`);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
-  const addSong = (newSong) => {
-    axios
-      .post(`${API}/playlists/${playlistId}/songs`, newSong)
-      .then(() => {
-        navigate(`/playlists/${playlistId}`);
-      })
-      .catch((err) => console.log(err));
-  };
   const [song, setSong] = useState({
     name: "",
     artist: "",
@@ -34,7 +35,16 @@ export default function NewSongForm({ playlistId }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addSong(song);
+    handleAdd(song);
+    console.log("id", playlistId);
+    setSong({
+      name: "",
+      artist: "",
+      album: "",
+      time: "",
+      is_favorite: false,
+      playlist_id: playlistId,
+    });
   };
 
   return (
@@ -99,12 +109,6 @@ export default function NewSongForm({ playlistId }) {
         </label>
         <input type="submit" />
       </form>
-
-      <div>
-        {/* <button className="go_back" onClick={() => navigate("/songs")}>
-          Back to Songs
-        </button> */}
-      </div>
     </div>
   );
 }

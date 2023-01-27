@@ -14,9 +14,10 @@ export default function Songs({ playlistId }) {
 
   const handleAdd = (newSong) => {
     axios
-      .post(`${API}/playlists/${id}/songs`, newSong)
+      .post(`${API}/playlists/${playlistId}/songs`, newSong)
       .then(
         (res) => {
+          console.log(res.data);
           setSongs([res.data, ...songs]);
         },
         (error) => console.error(error)
@@ -63,7 +64,7 @@ export default function Songs({ playlistId }) {
         setSongs(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
 
   return (
     <div className="songs">
@@ -94,7 +95,7 @@ export default function Songs({ playlistId }) {
         </table>
       </section>
       <div className="form-box">
-        <NewSongForm playlistId={playlistId} />
+        <NewSongForm playlistId={playlistId} handleAdd={handleAdd} />
       </div>
     </div>
   );
