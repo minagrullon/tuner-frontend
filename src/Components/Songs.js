@@ -14,11 +14,12 @@ export default function Songs({ playlistId }) {
 
   const handleAdd = (newSong) => {
     axios
-      .post(`${API}/playlists/${playlistId}/songs`, newSong)
+      .post(`${API}/playlists/${id}/songs`, newSong)
       .then(
         (res) => {
           console.log(res.data);
-          setSongs([res.data, ...songs]);
+          console.log(id);
+          setSongs([...songs, res.data]);
         },
         (error) => console.error(error)
       )

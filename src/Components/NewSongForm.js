@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./NewSong.css";
@@ -8,7 +8,8 @@ const API = process.env.REACT_APP_API_URL;
 
 export default function NewSongForm({ playlistId, handleAdd }) {
   const navigate = useNavigate();
-  // let { id } = useParams();
+  let { id } = useParams();
+  // const { songInfo } = props;
   // const addSong = (newSong) => {
   //   axios
   //     .post(`${API}/playlists/${playlistId}/songs`, newSong)
@@ -31,19 +32,20 @@ export default function NewSongForm({ playlistId, handleAdd }) {
   };
 
   const handleCheckboxChange = () => {
-    setSong({ ...song, is_favorite: !song.is_favorite });
+    setSong({ ...song, is_favorite: !song.is_favorite, playlist_id: id });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleAdd(song);
-    console.log("id", playlistId);
+    handleAdd(song, id);
+
     setSong({
       name: "",
       artist: "",
       album: "",
       time: "",
       is_favorite: false,
-      playlist_id: playlistId,
+      playlist_id: id,
     });
   };
 

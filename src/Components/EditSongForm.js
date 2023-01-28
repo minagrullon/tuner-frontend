@@ -55,7 +55,7 @@ export default function EditSongForm({
   };
 
   return (
-    <div className="form_container">
+    <div className="edit_song_container">
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="name">
           Title:{" "}
@@ -120,7 +120,7 @@ export default function EditSongForm({
           className="go_back"
           onClick={() => toggleEditForm(!viewEditForm)}
         >
-          Go Back
+          Cancel edit
         </button>
       </div>
     </div>
