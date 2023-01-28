@@ -18,7 +18,7 @@ export default function Songs({ playlistId }) {
       .then(
         (res) => {
           console.log(res.data);
-          console.log(id);
+
           setSongs([...songs, res.data]);
         },
         (error) => console.error(error)
