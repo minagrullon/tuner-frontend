@@ -7,7 +7,7 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 export default function NewSongForm({ playlistId, handleAdd }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   let { id } = useParams();
   // const { songInfo } = props;
   // const addSong = (newSong) => {
@@ -45,7 +45,7 @@ export default function NewSongForm({ playlistId, handleAdd }) {
       album: "",
       time: "",
       is_favorite: false,
-      playlist_id: id,
+      // playlist_id: id,
     });
   };
 

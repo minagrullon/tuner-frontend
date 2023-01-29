@@ -7,7 +7,7 @@ export default function Error() {
   return (
     <div className="error">
       <h2>Error</h2>
-      <button onClick={() => navigate("/songs")}>GO BACK!</button>
+      <button onClick={() => navigate("/playlists")}>GO BACK!</button>
     </div>
   );
 }
